@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  timeout: 5000
+
+development:
+  <<: *default
+  database: books_shop
+  username: rails
+  password: rails
+
+production:
+  <<: *default
+  database: books_shop
+  username: rails
+  password: rails

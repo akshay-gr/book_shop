@@ -1,0 +1,21 @@
+.container
+  .row
+    .col-md-12
+      .panel.panel-default
+        .panel-body
+          .dataTable_wrapper
+            %table#book_table.table.table-striped.table-bordered.table-hover.responsive.no-wrap
+              %thead
+                %tr
+                  %th
+                  %th Book Title
+                  %th Author
+              %tbody
+                - @books.each do |book|
+                  %tr.odd.gradeX
+                    %td.center
+                      = image_tag(book.cover_image.url(:thumb))
+                    %td.center
+                      = link_to book.title, book_path(book)
+                    %td.center
+                      = book.author
